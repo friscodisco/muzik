@@ -1,0 +1,5 @@
+production: &production
+  url: redis://10.10.3.153:6381
+development: &development
+  url: redis://localhost:6379
+test: *development
