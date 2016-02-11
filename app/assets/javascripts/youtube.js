@@ -22,6 +22,7 @@ function onPlayerStateChange(event) {
     loadVideo("FyASdjZE0R0");
   }
 }
+
 function stopVideo() {
   player.stopVideo();
 }
@@ -30,9 +31,13 @@ function loadVideo(videoId) {
   player.loadVideoById({ videoId: videoId });
 }
 
-$('.js-play-song').on('click', function() {
-  var videoLink = $('.js-video-link').val();
-  var matches = videoLink.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-  loadVideo(matches[1]);
-  $('.js-video-link').val('');
+$(document).ready(function() {
+  $('.js-play-video').on('click', function() {
+    var videoLink = $('.js-video-link').val();
+    var matches = videoLink.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+    if (matches.length > 0) {
+      loadVideo(matches[1]);
+    }
+    $('.js-video-link').val('');
+  });
 });

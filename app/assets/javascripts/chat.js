@@ -6,12 +6,13 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
 
   },
 
-  disconnection: function() {
+  disconnected: function() {
 
   },
 
   received: function(data) {
-    data['message']
+    var receivedMessage = data['message'];
+    $('.js-messages').append("<p>" + receivedMessage + "</p>");
   },
 
   speak: function(message) {
@@ -21,8 +22,21 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
   }    
 });
 
-$('.js-add-message').on('click', function() {
-  var message = $('.js-message').val();
+$(document).ready(function() {
+  $('.js-add-message').on('click', function() {
+    var userId = Cookies.get('userId')
+    if (!userId) {
+      alert('Please register your name');
+      return false;
+    }
 
-  App.chat.speak(message);
+    var message = $('.js-new-message').val().trim();
+    if (!message) {
+      alert('Please fill out your message');
+      return false;
+    }
+
+    $('.js-new-message').val('');
+    App.chat.speak(message);
+  });
 });
