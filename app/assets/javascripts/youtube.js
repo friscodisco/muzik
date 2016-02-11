@@ -11,14 +11,9 @@ function onYouTubeIframeAPIReady() {
     width: '640',
     videoId: 'HIJ5XvZeb-k',
     events: {
-      'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
     }
   });
-}
-
-function onPlayerReady(event) {
-  event.target.playVideo();
 }
 
 var done = false;
