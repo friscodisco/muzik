@@ -1,5 +1,11 @@
 This application requires Redis.
 
+Install Postgresql
+Terminal "brew install postgresql"
+
+Once postgres is install run
+Terminal: "rake db:setup"
+
 Install Redis
 Terminal: "brew install redis"
 
