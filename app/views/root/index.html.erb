@@ -15,7 +15,11 @@
   </div>
 
   <div class="messages-container">
-    <div class="js-messages messages"></div>
+    <div class="js-messages messages">
+      <% @messages.each do |message| %>
+        <p><%= message.user_name %> said: <%= message.content %></p>
+      <% end %>
+    </div>
     <input type="text" class="js-new-message" placeholder="Your message">
     <button type="button" class="js-add-message">Add Message</button>
   </div>

@@ -11,8 +11,9 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
   },
 
   received: function(data) {
-    var receivedMessage = data['message'];
-    $('.js-messages').append("<p>" + receivedMessage + "</p>");
+    var receivedContent = data['content'];
+    var contentAuthor = data['user_name'];
+    $('.js-messages').append("<p>" + contentAuthor + " said: " + receivedContent + "</p>");
   },
 
   speak: function(message) {
@@ -30,13 +31,13 @@ $(document).ready(function() {
       return false;
     }
 
-    var message = $('.js-new-message').val().trim();
-    if (!message) {
+    var content = $('.js-new-message').val().trim();
+    if (!content) {
       alert('Please fill out your message');
       return false;
     }
 
     $('.js-new-message').val('');
-    App.chat.speak(message);
+    App.chat.speak({ content: content, user_id: userId});
   });
 });

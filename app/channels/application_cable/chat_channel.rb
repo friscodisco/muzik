@@ -8,6 +8,12 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak data
-    ActionCable.server.broadcast 'chat_channel', message: data["message"]
+    message_params = data["message"]
+    message = Message.create!(content: message_params["content"], user_id: message_params["user_id"])
+    broadcast_message(message)
+  end
+
+  def broadcast_message message
+    ActionCable.server.broadcast 'chat_channel', content: message.content, user_name: message.user_name
   end
 end
