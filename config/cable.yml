@@ -1,5 +1,5 @@
 production: &production
-  url: ENV["REDIS_URL"]
+  url: redis://h:pbsanepg2otkl3brv0kjqmb16uh@ec2-54-83-32-60.compute-1.amazonaws.com:24089
 development: &development
   url: redis://localhost:6379
 test: *development
