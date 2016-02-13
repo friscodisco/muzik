@@ -1,3 +1,3 @@
 require 'redis'
 
-$redis = Redis.new()
+$redis = Redis.new(url: ENV['REDIS_URL'])
