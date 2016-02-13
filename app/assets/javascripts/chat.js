@@ -1,5 +1,5 @@
 App = {};
-App.cable = ActionCable.createConsumer('/cable');
+App.cable = ActionCable.createConsumer();
 
 App.chat = App.cable.subscriptions.create("ChatChannel", {
   connected: function() {
