@@ -79,7 +79,7 @@ Rails.application.configure do
 
   ENV["REDISTOGO_URL"] = 'redis://h:pbsanepg2otkl3brv0kjqmb16uh@ec2-54-83-32-60.compute-1.amazonaws.com:24089'
 
-  config.web_socket_server_url = "wss://muzikchat.herokuapp.com/cable"
+  config.web_socket_server_url = "ws://muzikchat.herokuapp.com/cable/"
 
   Rails.application.config.action_cable.allowed_request_origins = ['muzikchat.herokuapp.com']
 end
