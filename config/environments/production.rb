@@ -76,6 +76,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
+
   ENV["REDISTOGO_URL"] = 'redis://h:pbsanepg2otkl3brv0kjqmb16uh@ec2-54-83-32-60.compute-1.amazonaws.com:24089'
+
+  config.web_socket_server_url = "wss://muzikchat.herokuapp.com/cable"
+
+  Rails.application.config.action_cable.allowed_request_origins = ['muzikchat.herokuapp.com']
 end
