@@ -14,16 +14,25 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
     var receivedContent = data['content'];
     var contentAuthor = data['user_name'];
     $('.js-messages').append("<p>" + contentAuthor + ": " + receivedContent + "</p>");
+    this.scrollMessagesToBottom();
   },
 
   speak: function(message) {
     this.perform('speak', {
       message: message
-    }); 
-  }    
+    });
+  },
+
+  scrollMessagesToBottom: function() {
+    var messages = document.getElementsByClassName("js-messages")[0];
+    messages.scrollTop = messages.scrollHeight;
+  }
 });
 
 $(document).ready(function() {
+  var messages = document.getElementsByClassName("js-messages")[0];
+  messages.scrollTop = messages.scrollHeight;
+
   $('.js-new-message').on('keyup', function(e) {
     if (e.keyCode !== 13) {
       return;

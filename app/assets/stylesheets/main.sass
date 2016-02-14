@@ -17,13 +17,15 @@ $spacing: 16px
 
     .messages
       flex-grow: 1
-      padding: $spacing
+      flex-basis: auto
+      padding: 0 $spacing
+      overflow: auto
 
     .new-message-container
-      bottom: 0
-      display: flex
       padding: $spacing / 2
 
       .new-message
-        padding: 2px
+        box-sizing: border-box
+        padding: $spacing / 2 $spacing / 4
+        height: 13px
         width: 100%
