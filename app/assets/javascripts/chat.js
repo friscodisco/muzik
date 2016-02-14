@@ -24,7 +24,11 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
 });
 
 $(document).ready(function() {
-  $('.js-add-message').on('click', function() {
+  $('.js-new-message').on('keyup', function(e) {
+    if (e.keyCode !== 13) {
+      return;
+    }
+
     var userId = Cookies.get('userId')
     if (!userId) {
       alert('Please register your name');
