@@ -13,7 +13,7 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
   received: function(data) {
     var receivedContent = data['content'];
     var contentAuthor = data['user_name'];
-    $('.js-messages').append("<p>" + contentAuthor + " said: " + receivedContent + "</p>");
+    $('.js-messages').append("<p>" + contentAuthor + ": " + receivedContent + "</p>");
   },
 
   speak: function(message) {

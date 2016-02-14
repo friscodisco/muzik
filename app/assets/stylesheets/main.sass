@@ -1,8 +1,29 @@
+$spacing: 16px
+
 .main-section
   display: flex
-  
+  justify-content: space-between
+  max-width: 1024px
+  margin: 0 auto
+
   .messages-container
+    border: 1px solid black
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    height: 388px
+    margin: 0 $spacing * 2
+    max-width: 400px
+
     .messages
-      border: 1px solid black
-      height: 300px
-      width: 300px
+      flex-grow: 1
+      padding: $spacing
+
+    .new-message-container
+      bottom: 0
+      display: flex
+      padding: $spacing / 2
+
+      .new-message
+        padding: 2px
+        width: 100%

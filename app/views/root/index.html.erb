@@ -1,4 +1,8 @@
 <nav>
+  <div></div>
+  <div class="logo-container">
+    <p>MuzikChat</p>
+  </div>
   <div class="new-user-container">
     <input type="text" class="js-user-name" placeholder="What is your name?">
     <button type="button" class="js-create-user">Create User</button>
@@ -17,10 +21,11 @@
   <div class="messages-container">
     <div class="js-messages messages">
       <% @messages.each do |message| %>
-        <p><%= message.user_name %> said: <%= message.content %></p>
+        <p><%= message.user_name %>: <%= message.content %></p>
       <% end %>
     </div>
-    <input type="text" class="js-new-message" placeholder="Your message">
-    <button type="button" class="js-add-message">Add Message</button>
+    <div class="new-message-container">
+      <input type="text" class="js-new-message new-message" placeholder="Your message">
+    </div>
   </div>
 </div>
