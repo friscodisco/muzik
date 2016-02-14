@@ -81,5 +81,5 @@ Rails.application.configure do
 
   config.web_socket_server_url = "ws://muzikchat.herokuapp.com/cable/"
 
-  Rails.application.config.action_cable.allowed_request_origins = ['muzikchat.herokuapp.com']
+  Rails.application.config.action_cable.disable_request_forgery_protection = true
 end
