@@ -12,7 +12,7 @@
 </nav>
 
 <div class="main-section">
-  <div class="player-container">
+  <div class="video-container">
     <div id="player"></div>
     <div class="video-selection-container">
       <input type="text" class="js-video-link" placeholder="Enter youtube link">
@@ -21,6 +21,9 @@
   </div>
 
   <div class="messages-container">
+    <div class="messages-header">
+      <p>Chat With Room</p>
+    </div>
     <div class="js-messages messages">
       <% @messages.each do |message| %>
         <p><%= message.user_name %>: <%= message.content %></p>

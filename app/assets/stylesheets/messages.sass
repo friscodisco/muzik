@@ -1,0 +1,34 @@
+$black: #000000
+$light-blue: #00A8E8
+$white: #FFFFFF
+$spacing: 16px
+
+.messages-container
+  background-color: $light-blue
+  border: 1px solid $black
+  display: flex
+  flex-direction: column
+  flex-grow: 1
+  height: 388px
+  max-width: 400px
+  margin: $spacing 0 0 $spacing
+
+  .messages-header
+    background-color: $black
+    color: white
+    text-align: center
+
+  .messages
+    flex-grow: 1
+    flex-basis: auto
+    padding: 0 $spacing
+    overflow: auto
+
+  .new-message-container
+    padding: $spacing / 2
+
+    .new-message
+      box-sizing: border-box
+      padding: $spacing / 2 $spacing / 4
+      height: 13px
+      width: 100%
