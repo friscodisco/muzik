@@ -1,10 +1,19 @@
+$navy: #003459
+$white: #FFFFFF
 $spacing: 16px
 
 nav
-  display: flex
-  justify-content: space-between
+  background-color: $navy
   padding: 0 $spacing * 2
-  position: relative
+  color: $white
+  font-weight: 100
+
+  .nav-content
+    display: flex
+    justify-content: space-between
+    position: relative
+    max-width: 1024px
+    margin: 0 auto
 
   .logo-container
     position: absolute
