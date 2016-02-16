@@ -31,8 +31,10 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
 
 $(document).ready(function() {
   var messages = document.getElementsByClassName("js-messages")[0];
-  messages.scrollTop = messages.scrollHeight;
+  if (messages) { messages.scrollTop = messages.scrollHeight; }
+});
 
+$(document).ready(function() {
   $('.js-new-message').on('keyup', function(e) {
     if (e.keyCode !== 13) {
       return;
