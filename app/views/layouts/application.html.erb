@@ -9,6 +9,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <div class="nav-content">
+      <div></div>
+      <div class="logo-container">
+        <p>MuzikChat</p>
+      </div>
+      <div class="new-user-container">
+        <input type="text" class="js-user-name" placeholder="What is your name?">
+        <button type="button" class="js-create-user">Create User</button>
+      </div>
+    </div>
+  </nav>
 
 <%= yield %>
 
