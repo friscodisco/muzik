@@ -1,1 +1,23 @@
-<p><%= @room.name %></p>
+<div class="main-section">
+  <div class="video-container">
+    <div id="player"></div>
+    <div class="video-selection-container">
+      <input type="text" class="js-video-link" placeholder="Enter youtube link">
+      <button type="button" class="js-play-video">Play video</button>
+    </div>
+  </div>
+
+  <div class="messages-container">
+    <div class="messages-header">
+      <p>Chat With Room</p>
+    </div>
+    <div class="js-messages messages">
+      <% @messages.each do |message| %>
+        <p><%= message.user_name %>: <%= message.content %></p>
+      <% end %>
+    </div>
+    <div class="new-message-container">
+      <input type="text" class="js-new-message new-message" placeholder="Press Enter To Send Message">
+    </div>
+  </div>
+</div>
