@@ -9,4 +9,8 @@ class Message < ActiveRecord::Base
   def user_name
     user.name
   end
+
+  def room_id
+    room.id
+  end
 end
