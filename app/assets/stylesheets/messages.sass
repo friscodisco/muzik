@@ -1,16 +1,17 @@
 $black: #000000
+$light-gray: #EDEEF1
 $light-blue: #00A8E8
 $white: #FFFFFF
 $spacing: 16px
 
 .messages-container
-  background-color: $light-blue
+  background-color: $light-gray
   border: 1px solid $black
   display: flex
   flex-direction: column
   flex-grow: 1
-  height: 388px
-  max-width: 400px
+  max-height: calc(100vh - 70px)
+  max-width: 300px
   margin: $spacing 0 0 $spacing
 
   .messages-header
@@ -18,11 +19,17 @@ $spacing: 16px
     color: white
     text-align: center
 
+    p
+      margin: 12px
+
   .messages
     flex-grow: 1
     flex-basis: auto
     padding: 0 $spacing
     overflow: auto
+
+    p
+      font-size: 12px
 
   .new-message-container
     padding: $spacing / 2
