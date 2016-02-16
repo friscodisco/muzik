@@ -4,8 +4,8 @@ App.cable = ActionCable.createConsumer();
 $(document).ready(function() {
   App.chat = App.cable.subscriptions.create({ channel: "ChatChannel", room_id: $('.main-section').data('roomId') },
     {
-    connected: function() {
-
+    connected: function(data) {
+      console.log("You are connected")
     },
 
     disconnected: function() {
