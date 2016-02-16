@@ -11,7 +11,11 @@
 <body>
   <nav>
     <div class="nav-content">
-      <div></div>
+      <div>
+        <% if controller.controller_name == "rooms" && controller.action_name == "show" %>
+          <%= link_to 'Back to All Rooms', rooms_path, class: 'back-link' %>
+        <% end %>
+      </div>
       <div class="logo-container">
         <p>MuzikChat</p>
       </div>
