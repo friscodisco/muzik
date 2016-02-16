@@ -39,6 +39,8 @@ $(document).ready(function() {
     }
 
     var userId = Cookies.get('userId')
+    var roomId = $('.main-section').data('roomId')
+
     if (!userId) {
       alert('Please register your name');
       return false;
@@ -51,6 +53,10 @@ $(document).ready(function() {
     }
 
     $('.js-new-message').val('');
-    App.chat.speak({ content: content, user_id: userId});
+    App.chat.speak({
+      content: content,
+      user_id: userId,
+      room_id: roomId
+    });
   });
 });
