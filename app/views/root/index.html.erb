@@ -1,1 +1,11 @@
-<%= link_to 'Go to Rooms', rooms_path %>
+<div class="root-main">
+  <div class="root-hero">
+    <img src="<%= image_path('sunset.png') %>" alt="friends-playing-music-at-sunset">
+    <h1>MuzikChat</h1>
+    <p>Music sounds better when listening with friends.</p>
+  </div>
+  <div class="root-body">
+    <h2>Your new favorite song is waiting to be discovered.</h2>
+    <%= link_to 'Go to Rooms', rooms_path, class: 'red-button' %>
+  </div>
+</div>
