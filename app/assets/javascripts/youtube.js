@@ -30,9 +30,7 @@ $(document).ready(function() {
   function loadVideo(videoId) {
     player.loadVideoById({ videoId: videoId });
   }
-});
 
-$(document).ready(function() {
   $('.js-play-video').on('click', function() {
     var videoLink = $('.js-video-link').val();
     var matches = videoLink.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
