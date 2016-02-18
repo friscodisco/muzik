@@ -1,19 +1,12 @@
 <div class="room-index-section">
-  <div class="room-preview">
-    <img src="<%= image_path('classic.jpg') %>" alt="">
-    <p class="room-title">Classic</p>
+  <h2>Click any room below to join</h2>
+  <h3>or <%= link_to 'create your own room', new_room_path %></h3>
+  <div class="room-previews">
+    <% @rooms.each do |room| %>
+      <%= link_to room_path(room), class: 'room-preview' do %>
+        <img src="<%= image_path("#{ room.image_name }") %>" alt="">
+        <p class="room-title"><%= room.name %></p>
+      <% end %>
+    <% end %>
   </div>
-  <div class="room-preview">
-    <img src="<%= image_path('piano.jpg') %>" alt="">
-    <p class="room-title">Piano</p>
-  </div>
-  <div class="room-preview">
-    <img src="<%= image_path('trance.jpg') %>" alt="">
-    <p class="room-title">Trance</p>
-  </div>
-  <!-- <% @rooms.each do |room| %>
-    <%= link_to room.name, room_path(room) %>
-  <% end %>
-
-  <%= link_to 'Create a Room', new_room_path %> -->
 </div>
