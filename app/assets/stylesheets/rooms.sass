@@ -1,0 +1,44 @@
+$navy: #003459
+$white: #FFF
+$spacing: 16px
+
+.room-index-section
+  display: flex
+  justify-content: space-between
+  max-width: 1024px
+  margin: 0 auto
+  padding: $spacing * 4
+
+  .room-preview
+    display: inline-block
+    height: 200px
+    width: 300px
+    position: relative
+
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      background: $navy
+      opacity: 0.5
+
+    img
+      height: 100%
+      width: 100%
+
+    .room-title
+      bottom: $spacing
+      color: $white
+      left: $spacing
+      margin: 0
+      position: absolute
+
+.room-section
+  display: flex
+  justify-content: space-between
+  max-width: 1024px
+  margin: 0 auto

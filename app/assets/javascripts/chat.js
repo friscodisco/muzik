@@ -2,7 +2,7 @@ App = {};
 App.cable = ActionCable.createConsumer();
 
 $(document).ready(function() {
-  App.chat = App.cable.subscriptions.create({ channel: "ChatChannel", room_id: $('.main-section').data('roomId') },
+  App.chat = App.cable.subscriptions.create({ channel: "ChatChannel", room_id: $('.room-section').data('roomId') },
     {
     connected: function(data) {
       console.log("You are connected")
@@ -43,7 +43,7 @@ $(document).on('keyup', '.js-new-message', function(e) {
   }
 
   var userId = Cookies.get('userId')
-  var roomId = $('.main-section').data('roomId')
+  var roomId = $('.room-section').data('roomId')
 
   if (!userId) {
     alert('Please register your name');

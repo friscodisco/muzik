@@ -1,5 +1,19 @@
-<% @rooms.each do |room| %>
-  <%= link_to room.name, room_path(room) %>
-<% end %>
+<div class="room-index-section">
+  <div class="room-preview">
+    <img src="<%= image_path('classic.jpg') %>" alt="">
+    <p class="room-title">Classic</p>
+  </div>
+  <div class="room-preview">
+    <img src="<%= image_path('piano.jpg') %>" alt="">
+    <p class="room-title">Piano</p>
+  </div>
+  <div class="room-preview">
+    <img src="<%= image_path('trance.jpg') %>" alt="">
+    <p class="room-title">Trance</p>
+  </div>
+  <!-- <% @rooms.each do |room| %>
+    <%= link_to room.name, room_path(room) %>
+  <% end %>
 
-<%= link_to 'Create a Room', new_room_path %>
+  <%= link_to 'Create a Room', new_room_path %> -->
+</div>
