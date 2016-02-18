@@ -11,3 +11,7 @@ Terminal: "brew install redis"
 
 And run redis before starting up the Rails Server
 Terminal: "redis-server"
+
+
+To load up your database with seed data run
+Terminal "rails db:seed"
